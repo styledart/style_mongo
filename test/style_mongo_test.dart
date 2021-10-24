@@ -8,6 +8,24 @@ import 'package:style_test/style_test.dart';
 import 'package:test/expect.dart';
 
 void main() {
+
+  /*
+  * -   1.15 s
+            _passed_testing: /c/follows
+        -   79 ms
+            _passed_testing: /r/follows
+        -   78 ms
+            _passed_testing: /u/follows
+        -   76 ms
+            _passed_testing: /r/follows
+        -   78 ms
+            _passed_testing: /d/follows
+        -   79 ms
+            _passed_testing: /e/follows
+  * */
+
+
+
   initStyleTester("db", _MongoDbTest(), (tester) {
     tester("/c/follows", statusCodeIs(201), body: {
       "data": {"name": "Mehmet", "lastName": "Yaz"}
