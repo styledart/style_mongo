@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">428 ms</div>
+                <div class="time" xmlns="">1.54 s</div>
                 <h1>
-                    Tests in style_mongo_test.dart: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">3 total, </span><span class="passed">2 passed, </span><span class="skipped">1 skipped</span></strong>
+                    Tests in style_mongo_test.dart: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">6 total, </span><span class="passed">6 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,31 +593,71 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">428 ms</div>
+                                <div class="time">1.54 s</div>
                             </em></span>
                         <ul>
-                            <li class="level test">
-                                <span><em class="time">
-                                        <div class="time">346 ms</div>
-                                    </em><em class="status">passed</em>connection</span>
-                                <ul>
-                                    <li class="text">
-                                        <span class="stdout">All init: [true, true, true]<br/></span>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">82 ms</div>
+                                        <div class="time">1.54 s</div>
                                     </em>db</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">82 ms</div>
+                                                <div class="time">1.15 s</div>
+                                            </em><em class="status">passed</em>testing: /c/follows</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">HttpService Initialize true<br/>Logger Initialize true<br/>Data Access Initialize true<br/>CREATE DB: {connectionId: 101, n: 0, syncMillis: 0, writtenTo: null, writeConcern: {w: 1, wtimeout: 0}, err: null, ok: 1.0}<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">79 ms</div>
                                             </em><em class="status">passed</em>testing: /r/follows</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">Read DB: {_id: ObjectId(&quot;6173c09375f16ca2dc4bd618&quot;), mehmet: yaz}<br/></span>
+                                                <span class="stdout">Read DB: {_id: 617518c9a3491abd15fe9a88, name: Mehmet, lastName: Yaz}<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">78 ms</div>
+                                            </em><em class="status">passed</em>testing: /u/follows</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Update DB: : _InternalLinkedHashMap&lt;String, dynamic&gt; {n: 1, nModified: 1, ok: 1.0}<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">76 ms</div>
+                                            </em><em class="status">passed</em>testing: /r/follows</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Read DB: {_id: 617518c9a3491abd15fe9a88, name: Mehmet, lastName: Style}<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">78 ms</div>
+                                            </em><em class="status">passed</em>testing: /d/follows</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Delete DB: Instance of &#39;WriteResult&#39;<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">79 ms</div>
+                                            </em><em class="status">passed</em>testing: /e/follows</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Exists DB: 0<br/></span>
                                             </li>
                                         </ul>
                                     </li>
@@ -625,22 +665,11 @@ jQuery.cookie = function(name, value, options) {
                             </li>
                         </ul>
                     </li>
-                    <li class="level test ignored open">
-                        <span><em class="time"></em><em class="status">skipped</em>loading style_mongo_test.dart</span>
-                        <ul>
-                            <li class="text">
-                                <span class="stdout">Logger Initialize true<br/>HttpService Initialize true<br/>Data Access Initialize true<br/></span>
-                            </li>
-                            <li class="text">
-                                <span class="stdout">Process finished with exit code 0<br/></span>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
         <div id="footer">
-            <p>Generated by Android Studio on 10/23/21, 9:04 PM</p>
+            <p>Generated by Android Studio on 10/24/21, 11:32 AM</p>
         </div>
     </body>
 </html>
