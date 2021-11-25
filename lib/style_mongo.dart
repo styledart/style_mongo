@@ -1,8 +1,6 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// MongoDb DataAccess implementation for style_dart
 library style_mongo;
 
 export 'src/style_mongo_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/mongo_query.dart';
+export 'src/mongodb_operation_settings.dart';

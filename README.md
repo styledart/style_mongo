@@ -1,39 +1,82 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# style_mongo
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Style mongo is a ``DataAccess`` implementation for [style_dart](https://pub.dev/packages/style_dart).
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### Put To Component Tree
 
-```dart
-const like = 'sample';
-```
+````dart
+@override
+Component build(BuildContext context) {
+  return Server(
+      dataAccess: DataAccess(
+          MongoDbDataAccessImplementation("<connection-string>")
+      ),
+      children: [
+        //...
+      ]);
+}
+````
 
-## Additional information
+OR
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+````dart
+
+@override
+Component build(BuildContext context) {
+  return ServiceWrapper<DataAccess>(
+    service: DataAccess(
+        MongoDbDataAccessImplementation("<connection-string>")
+    ),
+    child: YourChildComponent(),
+  );
+}
+
+
+````
+
+### Operate
+
+````dart
+FutureOr<Object> onCall(Request request) {
+  return Access(
+    collection: "<collection>",
+    type: type,
+
+    // optional. necessary for some operations
+    // you can also use "Query" 
+    query: MongoQuery(where.eq("field", "value")),
+    
+    // optional. necessary for aggregation
+    pipeline: AggregationPipelineBuilder(/*stages*/),
+    // or pipeline: [{"\$project" : {"_id":0}}]
+  );
+}
+````
+
+**You can operate with any different styles like ``DataAccess.of(ctx).read(..)`` .**
+
+**Using with `Query`, `selector` parameter must be mongo db style Map.
+So must be `where.eq("field", "value").map["\$query"]`.**
+
+### Settings
+
+MongoDb have many operation settings like WriteConcern.
+You can set this settings with:
+
+````dart
+f(){
+  final access = Access(
+      settings: MongoDbFindSettings(findOptions: FindOptions(returnKey: true))
+    //...
+  );
+}
+````
+
+There is settings for all operations, except count and exists
+
+## Example Usage with AccessPoint
+
+Check Example
+
