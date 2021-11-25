@@ -1,14 +1,15 @@
 name: style_mongo
 description: MongoDb DataAccess implementation for style_dart.
-version: 1.0.0
-# homepage: https://www.example.com
-publish_to: none
+version: 1.0.0+1
+homepage: https://github.com/Mehmetyaz/style_mongo
+repository: https://github.com/Mehmetyaz/style_mongo
+
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: '>=2.14.0 <3.0.0'
 
 dependencies:
   mongo_dart: ^0.7.4
-  style_dart: ^1.0.2+5
+  style_dart: ^1.0.2+7
 
 dev_dependencies:
   style_test: ^1.0.0+2
